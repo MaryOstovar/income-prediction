@@ -49,7 +49,7 @@ income-prediction/
   - business-understanding.ipynb
   - data-prepration.ipynb
   - data-understanding.ipynb
-  - modeling.ipynb
+  - modeling-validation.ipynb
 
 ## Notes
 - Ensure data files are present in the appropriate directories before running scripts or notebooks.
@@ -60,7 +60,7 @@ This project follows the CRISP-DM (Cross-Industry Standard Process for Data Mini
 - **Business Understanding**: Identifying the project objectives and requirements from a business perspective. See `notebooks/business-understanding.ipynb`.
 - **Data Understanding**: Collecting, describing, and exploring the data to gain insights. See `notebooks/data-understanding.ipynb`.
 - **Data Preparation**: Cleaning, transforming, and organizing data for modeling. See `notebooks/data-prepration.ipynb`.
-- **Modeling & Validation**: Building machine learning models, tuning parameters, and validating performance. Both modeling and validation are covered in `notebooks/modeling.ipynb`.
+- **Modeling & Validation**: Building machine learning models, tuning parameters, and validating performance. Both modeling and validation are covered in `notebooks/modeling-validation.ipynb`.
 
 ## References
 - [UCI Adult Dataset](https://www.kaggle.com/datasets/uciml/adult-census-income)
