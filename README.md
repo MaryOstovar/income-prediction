@@ -1,61 +1,66 @@
-# income-prediction
+# Income Prediction Project
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+## Overview
+This project aims to predict income levels using the UCI Adult dataset. It leverages data science and machine learning techniques to preprocess data, build predictive models, and evaluate their performance. The project is structured for clarity and reproducibility, supporting notebook-based workflows.
 
-A short description of the project.
-
-## Project Organization
-
+## Directory Structure
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         income_prediction and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── income_prediction   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes income_prediction a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+income-prediction/
+├── main.py                  # Entry point for running scripts
+├── income-prediction/
+│   ├── Makefile             # Automation commands
+│   ├── pyproject.toml       # Project metadata and dependencies
+│   ├── README.md            # Project documentation
+│   ├── requirements.txt     # Python dependencies
+│   ├── data/
+│   │   ├── interim/         # Intermediate data (train/test/val splits)
+│   │   ├── processed/       # Preprocessed data and artifacts
+│   │   └── raw/             # Raw data (e.g., adult.csv)
+│   └── notebooks/
+│       ├── business-understanding.ipynb
+│       ├── data-prepration.ipynb
+│       ├── data-understanding.ipynb
+│       └── modeling.ipynb
 ```
 
---------
+## Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone <repo-url>
+   cd income-prediction
+   ```
+2. Create a virtual environment (optional but recommended):
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
+## Data Description
+- **raw/adult.csv**: Original UCI Adult dataset. The user should manually place the adult.csv file in this directory before starting.
+- **interim/**: Contains train.csv, test.csv, val.csv (split datasets). This folder is populated during the data preparation phase, but must exist prior to running scripts or notebooks.
+- **processed/**: Preprocessed features and targets, including joblib and npz files. This folder is also filled during data preparation, but must exist before execution.
+
+## Usage
+- Explore and run Jupyter notebooks in the `notebooks/` directory for step-by-step analysis:
+  - business-understanding.ipynb
+  - data-prepration.ipynb
+  - data-understanding.ipynb
+  - modeling.ipynb
+
+## Notes
+- Ensure data files are present in the appropriate directories before running scripts or notebooks.
+
+## CRISP-DM Methodology
+This project follows the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology, which is a structured approach to data science and machine learning projects. The workflow is organized into the following phases, each supported by dedicated Jupyter notebooks:
+
+- **Business Understanding**: Identifying the project objectives and requirements from a business perspective. See `notebooks/business-understanding.ipynb`.
+- **Data Understanding**: Collecting, describing, and exploring the data to gain insights. See `notebooks/data-understanding.ipynb`.
+- **Data Preparation**: Cleaning, transforming, and organizing data for modeling. See `notebooks/data-prepration.ipynb`.
+- **Modeling & Validation**: Building machine learning models, tuning parameters, and validating performance. Both modeling and validation are covered in `notebooks/modeling.ipynb`.
+
+## References
+- [UCI Adult Dataset](https://www.kaggle.com/datasets/uciml/adult-census-income)
